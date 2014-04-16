@@ -42,7 +42,6 @@ exports.assert = function(rec) {
   assert(rec.saleType);
   assert(rec.sales);
   assert(!isNaN(rec.perUnitPrice));
-  assert(rec.perUnitPrice >= 0);
   assert(!isNaN(rec.net));
   assert(rec.netCurrency);
   assert(!isNaN(rec.exchangeRate));
