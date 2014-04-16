@@ -1,0 +1,25 @@
+{
+  "name": "parse-tunecore-csv",
+  "description": "Parse tunecore csvs",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/jb55/parse-tunecore-csv.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r should --reporter spec --timeout 10000"
+  },
+  "dependencies": {
+    "better-assert": "^1.0.0",
+    "moment": "^2.6.0",
+    "parse-number": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "through": "^2.3.4",
+    "csv-parse": "0.0.2",
+    "csv-record-parser-stream": "0.0.3",
+    "debug": "^0.8.0"
+  }
+}
