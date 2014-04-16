@@ -1,7 +1,7 @@
 {
   "name": "tunecore-csv-parser",
   "description": "Parse tunecore csvs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "git://github.com/monstercat/tunecore-csv-parser.git"
   },
