@@ -24,14 +24,14 @@ var exports = module.exports = function TunecoreParser(csv) {
     , net: parseNumber(csv.col('total earned'))
     , currency: csv.col('currency')
     , exchangeRate: csv.col('exchange rate')
-    , foreignNet: csv.col('net sales')
+    , foreignNet: parseNumber(csv.col('net sales'))
     , foreignNetCurrency: csv.col('net sales currency')
   };
 };
 
 exports.assert = function(rec) {
   assert(rec.period instanceof Date);
-  assert(rec.posted instanceof Date);
+  assert(rec.date instanceof Date);
   assert(rec.store);
   assert(rec.country);
   assert(rec.label);
@@ -43,11 +43,11 @@ exports.assert = function(rec) {
   assert(rec.sales);
   assert(!isNaN(rec.perUnitPrice));
   assert(!isNaN(rec.net));
-  assert(rec.netCurrency);
+  assert(rec.currency);
   assert(!isNaN(rec.exchangeRate));
   assert(rec.exchangeRate >= 0);
-  assert(!isNaN(rec.earned));
-  assert(rec.currency);
+  assert(!isNaN(rec.foreignNet));
+  assert(rec.foreignNetCurrency);
 
   if (rec.type !== 'Album') {
     assert(rec.songTitle, 'song title should not be empty for non-albums');
