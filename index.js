@@ -6,7 +6,7 @@ var parseNumber = require('parse-number');
 var exports = module.exports = function TunecoreParser(csv) {
   return {
       period: exports.date(csv.col('sales period'))
-    , posted: exports.date(csv.col('posted date'))
+    , date: exports.date(csv.col('posted date'))
     , store: csv.col('store name')
     , country: csv.col('country of sale')
     , artist: csv.col('artist')
@@ -21,11 +21,11 @@ var exports = module.exports = function TunecoreParser(csv) {
     , saleType: csv.col('sales type')
     , sales: parseNumber(csv.col('# units sold'))
     , perUnitPrice: parseNumber(csv.col('per unit price'))
-    , net: parseNumber(csv.col('net sales'))
-    , netCurrency: csv.col('net sales currency')
-    , exchangeRate: csv.col('exchange rate')
-    , earned: csv.col('total earned')
+    , net: parseNumber(csv.col('total earned'))
     , currency: csv.col('currency')
+    , exchangeRate: csv.col('exchange rate')
+    , foreignNet: csv.col('net sales')
+    , foreignNetCurrency: csv.col('net sales currency')
   };
 };
 
